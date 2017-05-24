@@ -26,6 +26,10 @@ public class Graph {
         adj[w].add(v);
     }
 
+    public int numberOfVertices() {
+        return V;
+    }
+
     // return the iterator(since bag is an iterable) of all the vertices adjacent to the given vertex
     public Iterable<Integer> adj(int v) {
         return adj[v];
