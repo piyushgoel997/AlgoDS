@@ -7,8 +7,11 @@ import java.util.Stack;
  */
 public class DepthFirstPaths {
 
+    // true for the vertices which have been visited at least once. False otherwise.
     private Boolean[] visited;
+    // vertex used to reach the vertex at the index => denotes an edge
     private int[] prevVertex;
+    // starting vertex
     private int start;
 
     public DepthFirstPaths(Graph graph, int start) {
@@ -36,10 +39,12 @@ public class DepthFirstPaths {
         }
     }
 
+    // checks if the vertex 'v' has a path to the starting vertex, or vice versa.
     public boolean hasPathTo(int v) {
         return visited[v];
     }
 
+    // returns an iterable(stack) containing the path from start to vertex 'v', if it exists.
     public Iterable pathTo(int v) {
         if (!visited[v]) {
             return null;
