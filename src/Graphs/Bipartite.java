@@ -47,6 +47,7 @@ public class Bipartite {
     public static void main(String[] args) {
         int V = 4;
         Graph g = new Graph(V);
+        int lis = g.V;
         for (int i = 0; i < V - 1; i++) {
             g.addEdge(i, i + 1);
         }

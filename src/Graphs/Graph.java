@@ -8,10 +8,11 @@ import Misc.Bag;
 public class Graph {
     // vertex adjacency list implementation
 
+    // made protected to allow access in DiGraph
     // total no of Vertices
-    private final int V;
+    protected final int V;
     // adjacency list
-    private Bag<Integer>[] adj;
+    protected Bag<Integer>[] adj;
 
     public Graph(int V) {
         this.V = V;
@@ -25,6 +26,7 @@ public class Graph {
         adj[v].add(w);
         adj[w].add(v);
     }
+
 
     public int numberOfVertices() {
         return V;
