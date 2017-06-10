@@ -11,14 +11,18 @@ public class Queue<Item> implements Iterable {
     private Node<Item> first;
     private int size;
 
-    private class Node<Item> {
-        Item data;
-        Node<Item> next;
+    private class Node<T> {
+        T data;
+        Node<T> next;
+
+        public Node(T data, Node<T> next) {
+            this.data = data;
+            this.next = next;
+        }
     }
 
     public Queue(){
         first = null;
-        end = null;
         size = 0;
     }
 
@@ -52,6 +56,10 @@ public class Queue<Item> implements Iterable {
         return size == 0;
     }
 
+    public Item peek() {
+        return first.data;
+    }
+
     @Override
     public Iterator iterator() {
         return new QueueIterator();
@@ -70,4 +78,3 @@ public class Queue<Item> implements Iterable {
         }
     }
 }
-
