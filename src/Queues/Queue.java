@@ -1,9 +1,11 @@
 package Queues;
 
+import java.util.Iterator;
+
 /**
  * Created by piyus on 26-05-2017 at 22:35.
  */
-public class Queue<Item> {
+public class Queue<Item> implements Iterable {
 
     // first element of the queue
     private Node<Item> first;
@@ -50,6 +52,24 @@ public class Queue<Item> {
 
     public boolean isEmpty() {
         return size == 0;
+    }
+
+    @Override
+    public Iterator iterator() {
+        return new QueueIterator();
+    }
+
+    private class QueueIterator implements Iterator {
+        Node<Item> curr = first;
+        @Override
+        public boolean hasNext() {
+            return curr.next != null;
+        }
+
+        @Override
+        public Object next() {
+            return (curr = curr.next);
+        }
     }
 }
 

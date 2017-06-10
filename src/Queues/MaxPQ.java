@@ -6,6 +6,8 @@ import java.util.ArrayList;
  * Created by piyus on 06-04-2017.
  */
 public class MaxPQ<Item extends Comparable<Item>> {
+    // Binary Heap Implementation.
+
     private  ArrayList<Item> pq;
     private int n;
 
