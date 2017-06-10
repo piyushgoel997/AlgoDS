@@ -9,8 +9,6 @@ public class Queue<Item> implements Iterable {
 
     // first element of the queue
     private Node<Item> first;
-    // next to the last element of the queue
-    private Node<Item> end;
     private int size;
 
     private class Node<Item> {
@@ -28,14 +26,14 @@ public class Queue<Item> implements Iterable {
     public void enqueue(Item data) {
         size++;
         if (first == null) {
-            first = new Node<>();
-            first.data = data;
-            first.next = end;
+            first = new Node<>(data, null);
             return;
         }
-        end = new Node<>();
-        end.data = data;
-        end = end.next;
+        Node<Item> curr = first;
+        while (curr.next != null) {
+            curr = curr.next;
+        }
+        curr.next = new Node<>(data, null);
     }
 
     // return the firsts element from the queue and removes it from the queue.
