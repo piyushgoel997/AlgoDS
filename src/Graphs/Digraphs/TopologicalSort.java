@@ -1,5 +1,8 @@
 package Graphs.Digraphs;
 
+import Graphs.DepthFirstOrder;
+import Graphs.ShortestPath.EdgeWeightedDigraph;
+
 import java.util.Stack;
 
 /**
@@ -8,7 +11,7 @@ import java.util.Stack;
 public class TopologicalSort {
 
     private boolean[] visited;
-    private Stack revPostOreder;
+    private Stack<Integer> revPostOreder;
 
     public TopologicalSort(DiGraph dg) {
         int V = dg.numberOfVertices();
@@ -18,6 +21,16 @@ public class TopologicalSort {
         }
         dfs(dg, 0);
     }
+
+//    public TopologicalSort(EdgeWeightedDigraph G) {
+//        // only if G is acyclic
+//        int V = G.V();
+//        visited = new boolean[V];
+//        for (int i = 0; i < V; i++) {
+//            visited[i] = false;
+//        }
+//        revPostOreder = new DepthFirstOrder(G).depthFirstOrder();
+//    }
 
     public Stack getOrder() {
         return revPostOreder;
@@ -32,6 +45,7 @@ public class TopologicalSort {
         }
         revPostOreder.push(v);
     }
+
 
 
 }
