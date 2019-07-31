@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /**
  * Created by piyus on 22-05-2017 at 12:30.
+ * Needle in a Haystack
  */
 public class strstr {
     private static int strStr(String haystack, String needle) {

@@ -8,6 +8,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * Created by piyus on 11-07-2017 at 15:14.
  * Uses State Machine to search for the substring looking at one char at a time without any backing up.
+ * Time = O(M * R + N), Space = O(M * R)
  */
 public class KnuthMorrisPratt {
 
